@@ -1,28 +1,26 @@
-// Définir les fonctions random et les exporter
-// (dans un objet)
-
-const random = {
-  // 1 - method properties
-  get() {
-    return Math.random();
-  },
-
-  // 2 - default params
-  getArbitrary(min = 0, max = 100) {
-    return Math.random() * (max - min) + min;
-  },
-
-  getInt(min = 0, max = 100) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-  },
-
-  getIntInclusive(min = 0, max = 100) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min +1)) + min;
-  },
+function getRandom() {
+  return Math.random();
 }
 
-module.exports = random;
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min +1)) + min;
+}
+
+export {
+  getRandom,
+  getRandomArbitrary,
+  getRandomInt,
+  getRandomIntInclusive,
+};
