@@ -32,7 +32,7 @@ function jouer() {
     console.log('Vous avez déjà joué : ' + essais.join(' - '));
   }
 
-  rl.question('Quel est le nombre à deviner ? ', function cb(reponse) {
+  rl.question('Quel est le nombre à deviner ? ', (reponse) => {
 
     const entierSaisi = parseInt(reponse);
 

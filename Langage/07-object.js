@@ -53,6 +53,29 @@ const coords1 = {
   // getInfos: function() { return 'infos' },
 };
 
+// . et [] : 2 syntaxes pour accéder au contenu
+console.log(coords1.x);
+console['log'](coords1['x']);
+const dimension = 'y';
+console.log(coords1[dimension]);
+
+// pour boucler sur les clés d'un objet
+for (const key in coords1) {
+  console.log(key); // x y
+  console.log(coords1[key]); // 10 20
+}
+
+// cette version là => plus performante
+const keys = Object.keys(coords1);
+for (const key of keys) {
+  console.log(key);
+}
+/*
+for (let i = 0; i < keys.length; i++) {
+  const key = keys[i];
+}
+*/
+
 const coords2 = {
   x: 40,
   y: 64,
