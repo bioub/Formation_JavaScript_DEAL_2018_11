@@ -1,3 +1,5 @@
+'use strict';
+
 // Importer la classe Jeu
 const Jeu = require('./jeu');
 

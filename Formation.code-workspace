@@ -8,6 +8,12 @@
 		},
 		{
 			"path": "TodoList"
+		},
+		{
+			"path": "Async"
+		},
+		{
+			"path": "Exercice-Build"
 		}
 	],
 	"settings": {}

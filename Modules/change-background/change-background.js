@@ -1,6 +1,6 @@
 'use strict';
 
-// Module CommonJS
+// Module ES6
 import { getRandomIntInclusive } from './random';
 
 /**
