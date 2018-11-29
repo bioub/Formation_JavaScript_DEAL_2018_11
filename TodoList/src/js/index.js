@@ -1,5 +1,8 @@
+import '@babel/polyfill';
+
 import { addTodo } from "./todo-list";
 import { remove } from "./dom";
+import { fetchTodos } from "./api";
 
 const todoFormElt = document.querySelector('.todo-form');
 const todoAddElt = document.querySelector('.todo-add');
@@ -34,6 +37,15 @@ todoToggleElt.addEventListener('click', (event) => {
     checkbox.checked = todoToggleElt.checked;
   })
 });
+
+(async () => {
+  const todos = await fetchTodos();
+
+  todos.forEach((todo) => {
+    addTodo(todo, todoContainerElt);
+  });
+})();
+
 
 /*
 Exercice :
