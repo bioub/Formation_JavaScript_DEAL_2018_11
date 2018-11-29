@@ -3,6 +3,8 @@ const fs = require('fs-extra');
 // Uniquement possible si notre code est basé
 // sur Promise
 
+// ES2017 : async function
+
 async function main() {
   try {
     await fs.ensureFile('./logs/app.log');

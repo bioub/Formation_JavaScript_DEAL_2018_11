@@ -1,7 +1,7 @@
 function fakeRequest(data) {
   const fakeDb = {
-    user: {firstName: 'Romain'},
-    company: {name: 'Google'},
+    '/user': {firstName: 'Romain'},
+    '/company': {name: 'Google'},
   };
 
   return new Promise((resolve) => {
@@ -44,8 +44,8 @@ Promise.all([
 
 (async () => {
   const [company, user] = await Promise.all([
-    fakeRequest('company'),
-    fakeRequest('user'),
+    fakeRequest('/company'),
+    fakeRequest('/user'),
   ]);
 
   console.log({company: company.name, username: user.firstName});

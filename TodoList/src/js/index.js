@@ -1,8 +1,11 @@
 import { addTodo } from "./todo-list";
+import { remove } from "./dom";
 
 const todoFormElt = document.querySelector('.todo-form');
 const todoAddElt = document.querySelector('.todo-add');
 const todoContainerElt = document.querySelector('.todo-container');
+const todoToggleElt = document.querySelector('.todo-toggle');
+
 
 todoFormElt.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -15,6 +18,22 @@ todoFormElt.addEventListener('submit', (event) => {
   addTodo(todo, todoContainerElt);
 });
 
+todoContainerElt.addEventListener('click', (event) => {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  remove(event.target.parentNode);
+});
+
+todoToggleElt.addEventListener('click', (event) => {
+  const checkboxesElt = todoContainerElt.querySelectorAll('input[type="checkbox"]');
+
+  const checkboxes = Array.from(checkboxesElt);
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = todoToggleElt.checked;
+  })
+});
 
 /*
 Exercice :

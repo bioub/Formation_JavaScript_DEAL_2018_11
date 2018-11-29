@@ -11,12 +11,21 @@ import { prepend } from "./dom";
 function addTodo(todo, containerElt) {
   const divElt = document.createElement('div');
 
+  const checkboxElt = document.createElement('input');
+  checkboxElt.type = 'checkbox';
+
+  divElt.appendChild(checkboxElt); // <div><input></div>
+
   const inputElt = document.createElement('input');
   inputElt.type = 'text';
-  inputElt.required = true;
   inputElt.value = todo.text;
 
   divElt.appendChild(inputElt); // <div><input></div>
+
+  const buttonMoinsElt = document.createElement('button');
+  buttonMoinsElt.innerText = '-';
+
+  divElt.appendChild(buttonMoinsElt); // <div><input><button>-</button></div>
 
   prepend(containerElt, divElt);
 }

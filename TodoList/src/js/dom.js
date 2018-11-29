@@ -12,6 +12,15 @@ function prepend(containerElt, newElt) {
   }
 }
 
+/**
+ * Supprime l'élément
+ * @param {Element} element
+ */
+function remove(element) {
+  element.parentNode.removeChild(element);
+}
+
 export {
   prepend,
+  remove,
 }

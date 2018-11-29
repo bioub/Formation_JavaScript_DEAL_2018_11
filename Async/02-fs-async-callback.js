@@ -30,5 +30,5 @@ fs.ensureFile('./logs/app.log', (err) => {
 
 // ^
 // |
-// |ensureFile .......  appendFile
+// |try { ensureFile } .......  appendFile
 // +--------------------------------->
